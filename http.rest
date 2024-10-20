@@ -1,0 +1,27 @@
+@NEXT_URL=http://localhost:3000/
+
+
+###
+GET {{NEXT_URL}}/devices/api?controller=EC-LB-100-5110-01
+
+###
+POST {{NEXT_URL}}/devices/api
+Content-Type: application/json
+
+{
+    "ID" : "EC-LB-100-5110-01",
+    "values": 
+    {
+        "OP1": "ON",
+        "OP2": "OFF",
+        "OP3": "OFF",
+        "OP4": "OFF",
+        "OP5": "OFF",
+        "OP6": "OFF",
+        "OP7": "OFF",
+        "OP8": "OFF",
+        "OP9": "OFF"
+    }
+    
+  
+}
