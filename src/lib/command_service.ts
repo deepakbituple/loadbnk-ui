@@ -27,7 +27,7 @@ export const getCommands = async (controller: string): Promise<ICommand[]> => {
   try {
     connection = await dbpool.getConnection();
     const [results, fields] = (await connection.query(query)) as [any[], any];
-    console.log("fetch command Results: ", results, "fields: ", fields);
+    // console.log("fetch command Results: ", results, "fields: ", fields);
     for (const row of results) {
       const command: ICommand = {
         controller: row.controller,
@@ -119,7 +119,7 @@ export const updateCommand = async (controller: string, device: string, status: 
   //   }
   const updateQuery = "UPDATE commands SET value = ?, last_updated = ? WHERE code = ? and controller = ?";
   const currentDateTime = new Date();
-  console.log("Updating command ", command, " with status ", status);
+  //   console.log("Updating command ", command, " with status ", status);
   try {
     connection = await dbpool.getConnection();
     await connection.beginTransaction();

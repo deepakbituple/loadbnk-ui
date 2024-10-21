@@ -29,7 +29,7 @@ export async function getDevices(controller: string): Promise<IDevice[]> {
   try {
     connection = await dbpool.getConnection();
     const [results, fields] = (await connection.query(query)) as [any[], any];
-    console.log("In fetch device on server", fields);
+    // console.log("In fetch device on server", fields);
     // console.log("fetch device Results: ", results, "fields: ", fields);
     for (const row of results) {
       const device: IDevice = {
@@ -72,7 +72,7 @@ export async function getDevices(controller: string): Promise<IDevice[]> {
 // }
 
 export async function updateDevices(controller: string, deviceInput: any) {
-  console.log("Updating device status for controller: ", controller, deviceInput);
+  // console.log("Updating device status for controller: ", controller, deviceInput);
   let connection: any;
   const updateQuery = "UPDATE device SET state = ?, last_seen = ? WHERE device = ? and controller = ?";
   const currentDateTime = new Date();
@@ -82,7 +82,7 @@ export async function updateDevices(controller: string, deviceInput: any) {
     connection.beginTransaction();
     for (const [key, value] of Object.entries(deviceInput)) {
       const [results] = await connection.query(updateQuery, [value, currentDateTime, key, controller]);
-      console.log("Device ", key, " updated successfully", results);
+      // console.log("Device ", key, " updated successfully", results);
     }
 
     connection.commit();

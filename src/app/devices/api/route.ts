@@ -8,7 +8,7 @@ export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
   const controller = searchParams.get("controller") || "";
 
-  console.log("api route called " + request.url + " controller " + controller);
+  // console.log("api route called " + request.url + " controller " + controller);
   const devices: IDevice[] = await getDevices(controller);
   return new Response(JSON.stringify(devices), {
     headers: { "content-type": "application/json" },
@@ -20,9 +20,9 @@ interface CommandsResponse {
 }
 
 export async function POST(req: NextRequest) {
-  console.log("api route called " + req.url);
+  // console.log("api route called " + req.url);
   const deviceJSON = await req.json();
-  console.log("deviceJSON", deviceJSON);
+  // console.log("deviceJSON", deviceJSON);
   const controller = deviceJSON.ID;
   await updateDevices(controller, deviceJSON.values);
   const commands = await getCommands(controller);
