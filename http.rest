@@ -25,3 +25,32 @@ Content-Type: application/json
     
   
 }
+
+
+###
+
+POST http://db1rp5.local:8086/api/v2/write?org=ITUPLE&bucket=loadbnk
+Content-Type: text/plain; charset=utf-8 
+Authorization : Token grlvBUCfxrIi-rnQmIa3qBLnR_6x9ZH-isf58QuMAqhQjmJieRVvANgtn_N1DjwWCdkw-Ib893PC-9bImZRvuw==
+
+home,room=Living temp=21.1,hum=35.9,co=0i 
+home,room=Kitchen temp=21.0,hum=35.9,co=0i 
+home,room=Living temp=21.4,hum=35.9,co=0i 
+home,room=Kitchen temp=23.0,hum=36.2,co=0i 
+home,room=Living temp=21.8,hum=36.0,co=0i 
+home,room=Kitchen temp=22.7,hum=36.1,co=0i
+home,room=Living temp=22.2,hum=36.0,co=0i
+home,room=Kitchen temp=22.4,hum=36.0,co=0i
+home,room=Living temp=22.2,hum=35.9,co=0i 
+home,room=Kitchen temp=22.5,hum=36.0,co=0i
+home,room=Living temp=22.4,hum=36.0,co=0i
+home,room=Kitchen temp=22.8,hum=36.5,co=1i
+home,room=Living temp=22.3,hum=36.1,co=0i
+home,room=Kitchen temp=22.8,hum=36.3,co=1i
+home,room=Living temp=22.3,hum=36.1,co=1i
+home,room=Kitchen temp=22.7,hum=36.2,co=3i
+home,room=Living temp=22.4,hum=36.0,co=4i
+home,room=Kitchen temp=22.4,hum=36.0,co=7i
+home,room=Living temp=22.6,hum=35.9,co=5i
+home,room=Kitchen temp=22.7,hum=36.0,co=9i
+

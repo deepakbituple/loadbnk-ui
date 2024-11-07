@@ -10,9 +10,9 @@ export const formatDate = (date: Date, format: string = "DD MMM YYYY HH:MM"): st
   return formattedDate;
 };
 
-export const formatDateStr = (date: string = ""): string => {
+export const formatDateStr = (date: string, withseconds: boolean = false): string => {
   if (!date) return "NA";
-  const formattedDate = moment(date).calendar();
+  const formattedDate = moment(date).format(withseconds ? "DD MMM YYYY HH:mm:ss" : "DD MMM YYYY HH:mm");
   return formattedDate;
 };
 

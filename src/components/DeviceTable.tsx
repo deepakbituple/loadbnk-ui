@@ -4,7 +4,8 @@ import { IDevice } from "@/lib/device_service";
 import { formatDateStr } from "@/lib/utils";
 import DeviceStateButton from "./DeviceStateButton";
 
-function DeviceTable({ devices }: { devices: IDevice[] }) {
+function DeviceTable({ devices, controller }: { devices: IDevice[]; controller: string }) {
+  // console.log("In DeviceTable......devices", devices);
   return (
     <div>
       <Table>
@@ -19,13 +20,15 @@ function DeviceTable({ devices }: { devices: IDevice[] }) {
         </TableHeader>
         <TableBody>
           {devices.map((device) => (
-            <TableRow key={device.device}>
-              <TableCell>{device.device}</TableCell>
+            <TableRow key={device.device_id}>
               <TableCell>
-                <DeviceStateButton device={device} />
+                {device.device_id} - {device.name}
               </TableCell>
-              <TableCell className="w-[300px] text-center">{formatDateStr(device.last_seen)}</TableCell>
-              <TableCell className="text-center">{device.controller}</TableCell>
+              <TableCell>
+                <DeviceStateButton device={device} controller={controller} />
+              </TableCell>
+              <TableCell className="w-[300px] text-center">{formatDateStr(device.last_seen!, true)}</TableCell>
+              <TableCell className="text-center">{device.type}</TableCell>
             </TableRow>
           ))}
         </TableBody>
