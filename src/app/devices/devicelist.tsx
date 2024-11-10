@@ -55,14 +55,7 @@ function DeviceList() {
 
   return (
     <div className="w-full p-4 m-4">
-      {" "}
-      <DeviceTable devices={devices} controller={controller!} />{" "}
-      <iframe
-        id="grafanaDashboard"
-        width="100%"
-        height="600"
-        frameBorder="0"
-        src="http://db1rp5.local:3000/d/ae35lbartsb28b/loadbank"></iframe>
+      <DeviceTable devices={devices} controller={controller!} />
     </div>
   );
 }
